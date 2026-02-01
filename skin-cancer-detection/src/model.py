@@ -8,6 +8,7 @@ from tensorflow.keras.layers import (
 )
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.metrics import AUC
 from src.config import INPUT_SHAPE, LEARNING_RATE
 
 
@@ -73,7 +74,7 @@ def create_transfer_learning_model():
     model.compile(
         optimizer=Adam(learning_rate=LEARNING_RATE),
         loss='binary_crossentropy',
-        metrics=['accuracy', 'AUC']
+        metrics=['accuracy', AUC(name='auc')]
     )
     
     return model
@@ -98,7 +99,7 @@ def unfreeze_base_model(model, layers_to_unfreeze=20):
     model.compile(
         optimizer=Adam(learning_rate=LEARNING_RATE / 10),
         loss='binary_crossentropy',
-        metrics=['accuracy', 'AUC']
+        metrics=['accuracy', AUC(name='auc')]
     )
     
     return model
