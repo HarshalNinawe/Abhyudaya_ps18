@@ -1,0 +1,85 @@
+# Python virtual environment
+venv/
+env/
+ENV/
+.venv
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# TensorFlow/Keras
+*.h5
+*.hdf5
+models/*.h5
+models/*.hdf5
+!models/best_model.h5
+
+# Logs
+logs/*.log
+*.log
+
+# Data files
+data/raw/train/benign/*.jpg
+data/raw/train/benign/*.jpeg
+data/raw/train/benign/*.png
+data/raw/train/malignant/*.jpg
+data/raw/train/malignant/*.jpeg
+data/raw/train/malignant/*.png
+data/raw/val/**/*.jpg
+data/raw/val/**/*.jpeg
+data/raw/val/**/*.png
+data/raw/test/**/*.jpg
+data/raw/test/**/*.jpeg
+data/raw/test/**/*.png
+data/processed/*
+
+# Keep directory structure
+!data/raw/train/benign/.gitkeep
+!data/raw/train/malignant/.gitkeep
+!data/raw/val/.gitkeep
+!data/raw/test/.gitkeep
+!data/processed/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Model checkpoints
+models/checkpoints/*.h5
+models/checkpoints/*.hdf5
+!models/checkpoints/.gitkeep
+
+# Tensorboard logs
+logs/tensorboard/*
+!logs/tensorboard/.gitkeep
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
